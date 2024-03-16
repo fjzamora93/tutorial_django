@@ -1,0 +1,99 @@
+
+#about{
+    display:inline-block;
+    font-family: arial;
+    background-color: rgb(245, 240, 240);
+    text-align:left;
+    margin:20px;
+
+}
+
+body{
+    text-align:center;
+}
+
+.cabecera{
+    display:inline-block;
+}
+
+.dibujo{
+    width: 400px;
+    height: auto;
+    vertical-align:top;
+}
+
+header{
+    margin-top:2em;
+}
+
+.hello{
+    background-image: url('img/hello.svg');
+    background-size: 100% 100%;
+    background-attachment: local;
+    background-position: top left;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.menu li{
+    display: inline-block;
+    background-color:rgb(41, 39, 50) ;
+    color:white;
+    margin-left:10px;
+    margin-bottom:10px;
+    padding:7px;
+
+    font-size:1em;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.menu li:hover{
+    font-size:1.5em;
+    background-color:rgb(177, 171, 189);
+    color:rgb(0, 0, 0);
+
+}
+
+
+a{
+    text-decoration:none;
+}
+
+.presentacion{
+    display: inline-block;
+    text-align: right;
+    /*Normalmente pondría el alineamiento vertical en middle,
+    pero no funciona bien. En top tampoco queda mal. Lo dejo en 100px o 5em*/
+    vertical-align: 5em;
+    margin: 40px;
+    max-width: 400px;
+    
+    
+}
+
+
+.rrss li, .rrss img{
+    display:inline-block;
+    width: 20px;
+    height: auto;
+}
+
+img:hover{
+    opacity: 0.8;
+}
+
+h3{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 0.2;
+}
+
+h2{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
