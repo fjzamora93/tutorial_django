@@ -1,0 +1,40 @@
+EL USO DE VARIABLES EN DJANGO Y HTML
+
+El uso de variables en django tiene dos partes:
+
+PARTE 1: views
+
+La primera parte la encontraremos dentro del archivo views.py, 
+justo dentro de la definición de cada función que queramos ejecutar.
+
+        def index(request):
+            now = datetime.datetime.now()
+
+            return render(request, "hello/index.html", {
+                "newyear": now.month == 1 and now.day == 1
+                }
+            )
+
+Al igual que veíamos en flet, primero definimos todas las variables o bloques.
+Y en segundo lugar, indicamos el return, donde declararemos 
+las variables propias del html en formato de "clave": valor. 
+
+En este caso, "newyear" guarda dos booleanos, que para que den True,
+debe cumplirse True and True. De otro modo, darán False.
+
+
+PARTE 2: El html
+
+Dentro del html la sintaxis para introducir código de python es esta:
+{% escribe tu código en python %}
+
+Al insertarse en el html se vería algo como esto:
+
+        {% if True %}
+            <h3> Sí </h3>
+        {% elif False %}
+            <h3> No </h3>
+        {% endif %}
+
+Con respecto al if, la única diferencia es que hay que incluir un "endif".
+ Por lo demás, la sintaxis es parecida añadiendo las llaves y los porcentajes.

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="./estilos.css" type="text/css">
+    <link href="{% static 'hello/style.css' %}" rel="stylesheet" >
     <title>Document</title>
 </head>
+
 <body>
     
+    <h2>¿Es año nuevo?</h2>
+
+    <div>
+        {% if newyear %}
+            <h3> Sí </h3>
+        {% else %}
+            <h3> No </h3>
+        {% endif %}
+    </div>
+
+
     <header>
         <!--- Comenzamos creando un menú a partir de una lista-->
         <ul class="menu">
@@ -33,7 +47,7 @@
     <div clas="cabecera">
         
         
-        <image class ="dibujo" src="img/hello.svg">
+        <img class ="dibujo" src="{% static 'hello/img/hello.svg' %}">
        
 
         <div class="presentacion">

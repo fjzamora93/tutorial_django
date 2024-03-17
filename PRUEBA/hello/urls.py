@@ -5,8 +5,10 @@ from . import views
 urlpatterns=[
     
     path("", views.index, name="hello"), #Cuando alguien visite la url vacía, verá la index.
+    path("añadir", views.añadir, name="añadir"),
     path("javi", views.javi, name="javi"),
     path("<str:nombre>", views.saludo, name="saludo"),
+    
     
 ]
 
