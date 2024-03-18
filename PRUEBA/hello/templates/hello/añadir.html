@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <form>
+<!--- Esta es la forma de decir que  a partir de aquí va a remplazar el bloque del layout-->
+{% extends "hello/layout.html" %}
+
+<!--- Comenzamos con el bloque que remplaza...-->
+{% block body %}
+    <form action="{% url 'primer_proyecto:añadir' %}" method="post">
+        {% csrf_token %}
+
+        <h2>Este formulario es bueno, es el de DJANGO</h2>
         <fieldset><legend>Listado de tareas</legend>
-            <input type="text" name="tareas">
-            <input type="submit" value="enviar">
+            {{ form }}
+            <br><input type="submit" value="enviar">
         </fieldset>
+
+
+            <h3>Este formulario no va a funcionar, ya que está en HTML</h3>
+            <input type="text" name="tareas">
+        
     </form>
 
+    <a href="{% url 'primer_proyecto:index' %}"> Home </a>
+    <a href="{% url 'primer_proyecto:lista' %}"> Mi Lista </a>
 
-</body>
-</html>
+{% endblock %}
+<!--- Y aquí acaba el bloque-->

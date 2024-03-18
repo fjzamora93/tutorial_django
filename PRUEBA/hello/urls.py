@@ -2,10 +2,23 @@ from django.urls import path
 from . import views
 
 
+"""
+La siguiente línea de código app_name = "name", lo que hará será prevenir
+colisión entre páginas que tengan el mismo name = "". 
+
+De esta forma, a partir de ahora las rutas relativas deberán especificar también el nombre
+de la app que se esté utilizando para que puedan utilizar el href de la app adecuada.
+
+Esto sucederá especialmente cuando varias páginas se llamen index... o style
+"""
+app_name = "primer_proyecto"
+
+
 urlpatterns=[
     
-    path("", views.index, name="hello"), #Cuando alguien visite la url vacía, verá la index.
+    path("", views.index, name="index"), #Cuando alguien visite la url vacía, verá la index.
     path("añadir", views.añadir, name="añadir"),
+    path("lista", views.lista, name="lista" ),
     path("javi", views.javi, name="javi"),
     path("<str:nombre>", views.saludo, name="saludo"),
     

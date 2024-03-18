@@ -1,0 +1,49 @@
+{% extends "hello/layout.html" %}
+
+{% block body %}
+    <header>
+        <!--- Comenzamos creando un menú a partir de una lista-->
+        <ul class="menu">
+            <a href="#about">
+                <li>{{ nombre }}</li>
+            </a>
+            <a href="#skills"> 
+                <li>Habilidades</li> 
+            </a>
+          
+        </ul>
+    </header>
+
+
+    <div clas="cabecera">
+        
+    
+        <div class="presentacion">
+            <h3> Hol! Bienvenido a la lista de tareas</h3>
+        </div>
+        
+        <h3>Esta primera lista usa una variable interna</h3>
+        <ul style="list-style-type: none;">
+            {% for tarea in tareas %}
+                <li>{{ tarea }}</li>
+            {% empty %}
+                <li>Nasty de plasty</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Esta segunda lista usa el request.session</h3>
+        <ul style=" list-style-type: none;">
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% empty %}
+                <li> "No hay tareas pendientes" </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'primer_proyecto:añadir' %}"> Añadir una nueva tarea a la lista </a>
+        
+        <a href="{% url 'primer_proyecto:index' %}"> Home </a>
+
+    </div>
+
+{% endblock %}

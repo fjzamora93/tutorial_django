@@ -1,5 +1,7 @@
-¿CÓMO AÑADIR CSS EN DJANGO? (3 fases)
+¿CÓMO AÑADIR HREF Y URLS EN DJANGO DE FORMA RELATIVA? (3 fases)
 
+
+PARA EL CSS
 1. CREACIÓN DEL DIRECTORIO STATIC
 
 En primer lugar, dentro de nuetro proyecto debemos crear una carpeta llamada "static".
@@ -31,3 +33,19 @@ vamos a decir que es un estático. Esto lo haremos de esta manera:
     <link rel="stylesheet" href="{% static 'hello/style.css' %}" type="text/css">
 
 Al hacerlo así, estamos diciendo a django que se imagine dónde está static y lo cargue a la url.
+
+
+PARA URLS QUE LLEVEN A OTRA página
+
+Aunque nuevamente podríamos usar rutas absolutas, lo cuál provocaría 
+problemas en caso de cambiar la estructura de la página web. Lo ideal es usar 
+rutas relativas, que tienen el siguiente formato:
+
+    <a href="{% url 'index' %}"> Home </a>
+
+    <a href="{% url 'añadir' %}"> Añadir una nueva tarea a la lista </a>
+
+
+
+¿Por qué funciona esto? Porque recuerda que tenemos un archivo con todas las URLS,
+y es ahi donde deberíamos cambiar eso.

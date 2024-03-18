@@ -31,10 +31,11 @@
         <!--- Comenzamos creando un menú a partir de una lista-->
         <ul class="menu">
             <a href="#about">
-                <li>Quién soy</li>
+                <li> <a href="{% url 'primer_proyecto:lista' %}"> Mi Lista </a></li>
+                     
             </a>
             <a href="#skills"> 
-                <li>Habilidades</li> 
+                <li> <a href="{% url 'primer_proyecto:añadir' %}"> Añadir </a></li> 
             </a>
             <li>Competencias</li>
             <li>Experiencia</li>
