@@ -1,0 +1,15 @@
+
+
+h2 { font-family: Papyrus; 
+    font-size: 3em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px; }
+
+body{
+    background-image: url(img/paper2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+}

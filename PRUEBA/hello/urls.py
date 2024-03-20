@@ -18,6 +18,7 @@ urlpatterns=[
     
     path("", views.index, name="index"), #Cuando alguien visite la url vacía, verá la index.
     path("añadir", views.añadir, name="añadir"),
+    path("potion-craft", views.potion_craft, name="potion"),
     path("lista", views.lista, name="lista" ),
     path("javi", views.javi, name="javi"),
     path("<str:nombre>", views.saludo, name="saludo"),

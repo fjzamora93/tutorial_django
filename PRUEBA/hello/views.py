@@ -2,7 +2,6 @@ from django.shortcuts import render
 import datetime
 from django import forms
 
-
 #importamos esto, para que podamos usar el HttpResponse.
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -66,7 +65,6 @@ def añadir(request):
 
 def lista(request):
     if "tasks" not in request.session:
-       
         request.session["tasks"] = []
 
     return render(request, "hello/lista.html", {
@@ -76,3 +74,8 @@ def lista(request):
     )
     
  
+def potion_craft(request):
+    return render(request, "hello/potion-craft.html", {
+
+        }
+    )
