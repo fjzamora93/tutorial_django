@@ -9,8 +9,9 @@ urlpatterns=[
     #Introducimos el admin
     path('admin/', admin.site.urls),
 
-    path("", views.flights, name="index"), #Cuando alguien visite la url vacía, verá la index.
-    path("flights", views.flights, name="flights"),
-    path("passengers", views.passengers, name="passenger"),
-    path("origins", views.origins, name="origins" ),
+    #Utilizaremos una view para mostrar los detalles de cada vuelo en particucar
+    path("<int:flight_id>", views.flights_detail, name="flight_detail"),
+
+    path("", views.index, name="index"), 
+    
 ]
