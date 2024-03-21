@@ -10,4 +10,14 @@
         <li>Duration: {{ flight.duration }}</li>
     </ul>
 
+    <ul>
+        <h3>Pasajeros</h3>
+        {% for pasajero in passengers %}
+        <li>  {{ pasajero }} </li>
+        {% empty %}
+            <p> No hay pasajeros en este vuelo </p>
+        {% endfor %}
+    </ul>
+
+
 {% endblock %}

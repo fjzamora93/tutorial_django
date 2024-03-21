@@ -11,9 +11,13 @@ def index(request):
 
 
 
-
-
 def flights_detail(request, flight_id):
     flight = Flight.objects.get(pk=flight_id)
-    return render(request, "flights/flight_detail.html", {"flight": flight})
+    return render(request, "flights/flight_detail.html", {
+        "flight": flight,
+
+        #Fíjate que al dar acceso estamos usando "passengers", que es el 'RELATED NAME' que le dimos.
+        #Al mismo tiempo, para dar acceso a la lista de todos, añadimso el all
+        "passengers" : flight.passengers.all(),
+        })
 
