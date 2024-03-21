@@ -5,6 +5,7 @@
     <h3> Flights </h3>
     {% for flight in flights %}
         <li> Flight {{ flight.id }} : {{ flight.origin }} hasta {{ flight.destination }}</li>
+        <a href="{% url 'flight_detail' flight.id %}"> Detalles del vuelo</a>
     {% empty %}
         <p> No hay vuelos en este momento </p>
     {% endfor %}
