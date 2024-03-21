@@ -24,6 +24,7 @@ urlpatterns=[
     path("<str:nombre>", views.saludo, name="saludo"),
     
     
+    
 ]
 
 """
