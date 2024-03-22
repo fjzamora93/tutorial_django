@@ -9,9 +9,11 @@ urlpatterns=[
     #Introducimos el admin
     path('admin/', admin.site.urls),
 
+    path("", views.index, name="index"), 
+
     #Utilizaremos una view para mostrar los detalles de cada vuelo en particucar
     path("<int:flight_id>", views.flights_detail, name="flight_detail"),
 
-    path("", views.index, name="index"), 
+    path("<int:flight_id>/book", views.book, name="book"),
     
 ]
